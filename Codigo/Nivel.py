@@ -4,10 +4,10 @@ from suelo import piso
 from Jugador import Jugador
 from Debug import debug
 from Soporte import *
+from random import *
 
 class Nivel:
     def __init__(self):
-        
 
         self.mostrars = pygame.display.get_surface()
         self.spritesv = YCamaraGrupo()
@@ -21,6 +21,11 @@ class Nivel:
             "grass": import_csv_layout("./Mapa/map_Grass.csv"),
             "objetos": import_csv_layout("./Mapa/map_Objects.csv")
         }
+        graphics = {
+            "grass" : import_folder("./Grafico/grass"),
+            "objeto": import_folder("./Grafico/objects")
+        }
+        
         
 
         for style,layout in layouts.items():
@@ -32,9 +37,11 @@ class Nivel:
                    if style == 'boundary':
                         piso((x,y),[self.obstaculos],'invisible')
                    if style == "grass":
-                        pass
+                        random_grass_i = choice(graphics["grass"])
+                        piso((x,y),[self.spritesv,self.obstaculos],"grass",random_grass_i)
                    if style == "objetos":
-                        pass
+                        superficie = graphics["objeto"][int(col)]
+                        piso((x,y),[self.spritesv,self.obstaculos],"objeto",superficie)
             #    if col == "x":
             #        piso((x,y),[self.spritesv,self.obstaculos])
              #   if col == "p":

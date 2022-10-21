@@ -10,7 +10,7 @@ class Game:
 
         pygame.init()
         self.pantalla = pygame.display.set_mode((Ancho,Largo))
-        pygame.display.set_caption("Zelda")
+        pygame.display.set_caption("wegito")
         self.frames = pygame.time.Clock()
 
         self.nivel = Nivel()
@@ -22,7 +22,7 @@ class Game:
                     pygame.quit()
                     sys.exit()
 
-            self.pantalla.fill('black')
+            self.pantalla.fill('blue')
             self.nivel.run()
            # debug(pygame.mouse.get_pos())
            # debug(pygame.mouse.get_pressed(),40,0)

@@ -9,12 +9,14 @@ class Jugador(pygame.sprite.Sprite):
         self.hitbox = self.rect.inflate(0,-26)
 
         self.direccion = pygame.math.Vector2()
-        self.velocidad = 5
+        self.velocidad = 10
 
         self.obstaculos = obstaculos
 
     def input(self):
         teclas = pygame.key.get_pressed()
+
+        #Input de movimiento:
 
         if teclas[pygame.K_UP]:
             self.direccion.y = -1
@@ -29,6 +31,15 @@ class Jugador(pygame.sprite.Sprite):
             self.direccion.x = -1
         else:
             self.direccion.x = 0
+
+        #Input de ataque
+        if teclas[pygame.K_SPACE]:
+            print("Ataque")
+
+
+        #Input Idel
+
+
 
     def move(self,velocidad):
         if self.direccion.magnitude() != 0:
