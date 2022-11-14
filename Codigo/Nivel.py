@@ -45,7 +45,7 @@ class Nivel:
             #    if col == "x":
             #        piso((x,y),[self.spritesv,self.obstaculos])
              #   if col == "p":
-        self.jugador = Jugador((2000,1430),[self.spritesv],self.obstaculos)
+        self.jugador = Jugador((900,985),[self.spritesv],self.obstaculos)
 
     
 
@@ -53,6 +53,7 @@ class Nivel:
     def run(self):
         self.spritesv.custom_draw(self.jugador)
         self.spritesv.update()
+        debug(self.jugador.estado)
 
 class YCamaraGrupo(pygame.sprite.Group):
     def __init__(self):
