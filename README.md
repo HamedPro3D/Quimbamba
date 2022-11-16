@@ -1,4 +1,4 @@
-<center> <h2> Proyecto Final </h2> 
+<p class=text-align-justify> <h2> Proyecto Final </h2> 
 **Integrante 1, *** Integrante 2
 
 ** Estudiante de Ingeniería Chanel Naomi Olier Watson, Código: 200110086 
@@ -12,7 +12,7 @@ Programación Orientada a Objetos
 Fecha (17-11-22) 
 
 Barranquilla-Colombia 
-</center>
+</p>
 
 ### **Estructura y contenido**
 
