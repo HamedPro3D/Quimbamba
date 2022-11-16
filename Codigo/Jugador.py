@@ -9,7 +9,7 @@ from Soporte import import_folder
 class Jugador(pygame.sprite.Sprite):
     def __init__(self,pos,grupos,obstaculos):
         super().__init__(grupos)
-        self.image = pygame.image.load("./Grafico/player/0.png").convert_alpha()
+        self.image = pygame.image.load("./player/0.png").convert_alpha()
         self.rect = self.image.get_rect(topleft = pos)
         self.hitbox = self.rect.inflate(0,-26)
 
@@ -27,9 +27,9 @@ class Jugador(pygame.sprite.Sprite):
         self.obstaculos = obstaculos
 
     def animaciones(self):
-        ubicacionp = "./Grafico/player/"
+        ubicacionp = "./player/"
         self.animacionp = {"arriba": [], "abajo": [], "izquierda": [], "derecha": [], "arriba_idel": [],
-             "abajo_idel": [],"izquierda_idel":[],"derecha_idel":[] }
+            "abajo_idel": [],"izquierda_idel":[],"derecha_idel":[] }
         
         for animacion in self.animacionp.keys():
             todopath = ubicacionp + animacion
@@ -56,13 +56,13 @@ class Jugador(pygame.sprite.Sprite):
             self.sw = self.sw + 1
             print(self.sw)
             if(self.sw <= 10):
-                self.image = pygame.image.load("./Grafico/player/derecha/1.png").convert_alpha()
+                self.image = pygame.image.load("./player/derecha/1.png").convert_alpha()
                 print("fem")
                 self.sw=self.sw + 1
             if self.sw >= 8 :
-                self.image = pygame.image.load("./Grafico/player/derecha/2.png").convert_alpha()
+                self.image = pygame.image.load("./player/derecha/2.png").convert_alpha()
             if self.sw >= 10:
-                self.image = pygame.image.load("./Grafico/player/derecha/3.png").convert_alpha()
+                self.image = pygame.image.load("./player/derecha/3.png").convert_alpha()
                 self.sw=0
         elif teclas[pygame.K_LEFT]:
             self.direccion.x = -1
@@ -70,13 +70,13 @@ class Jugador(pygame.sprite.Sprite):
             self.sw = self.sw + 1
             print(self.sw)
             if(self.sw <= 10):
-                self.image = pygame.image.load("./Grafico/player/izquierda/1.png").convert_alpha()
+                self.image = pygame.image.load("./player/izquierda/1.png").convert_alpha()
                 print("fem")
                 self.sw=self.sw + 1
             if self.sw >= 8 :
-                self.image = pygame.image.load("./Grafico/player/izquierda/2.png").convert_alpha()
+                self.image = pygame.image.load("./player/izquierda/2.png").convert_alpha()
             if self.sw >= 10:
-                self.image = pygame.image.load("./Grafico/player/izquierda/3.png").convert_alpha()
+                self.image = pygame.image.load("./player/izquierda/3.png").convert_alpha()
                 self.sw=0
         else:
             self.direccion.x = 0
@@ -99,10 +99,10 @@ class Jugador(pygame.sprite.Sprite):
         #Transformaciones
         if teclas[pygame.K_k]:
             print("transformacion")
-            self.image = pygame.image.load("./Grafico/test/rock.png").convert_alpha()
+            self.image = pygame.image.load("./test/rock.png").convert_alpha()
 
         if teclas[pygame.K_j]:
-            self.image = pygame.image.load("./Grafico/test/player.png").convert_alpha()
+            self.image = pygame.image.load("./test/player.png").convert_alpha()
 
     def estados(self):
         #Idel

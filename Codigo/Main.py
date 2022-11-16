@@ -1,4 +1,3 @@
-
 import pygame,sys
 from Ajustes import *
 from Debug import debug
@@ -24,9 +23,9 @@ class Game:
 
             self.pantalla.fill('blue')
             self.nivel.run()
-           # debug(pygame.mouse.get_pos())
-           # debug(pygame.mouse.get_pressed(),40,0)
-           # debug("Mouse track",pygame.mouse.get_pos()[1],pygame.mouse.get_pos()[0])
+        # debug(pygame.mouse.get_pos())
+        # debug(pygame.mouse.get_pressed(),40,0)
+        # debug("Mouse track",pygame.mouse.get_pos()[1],pygame.mouse.get_pos()[0])
             pygame.display.update()
             self.frames.tick(FPS)
 
