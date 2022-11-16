@@ -31,20 +31,20 @@ class Nivel:
         for style,layout in layouts.items():
             for row_index,row in enumerate(layout):
                 for col_index, col in enumerate(row):
-                  if col != '-1':
-                   x  = col_index * TILESIZE
-                   y = row_index * TILESIZE
-                   if style == 'boundary':
+                    if col != '-1':
+                        x  = col_index * TILESIZE
+                        y = row_index * TILESIZE
+                    if style == 'boundary':
                         piso((x,y),[self.obstaculos],'invisible')
-                   if style == "grass":
+                    if style == "grass":
                         random_grass_i = choice(graphics["grass"])
                         piso((x,y),[self.spritesv,self.obstaculos],"grass",random_grass_i)
-                   if style == "objetos":
+                    if style == "objetos":
                         superficie = graphics["objeto"][int(col)]
                         piso((x,y),[self.spritesv,self.obstaculos],"objeto",superficie)
             #    if col == "x":
             #        piso((x,y),[self.spritesv,self.obstaculos])
-             #   if col == "p":
+            #   if col == "p":
         self.jugador = Jugador((900,985),[self.spritesv],self.obstaculos)
 
     
@@ -75,7 +75,7 @@ class YCamaraGrupo(pygame.sprite.Group):
         suelooffset_pos = self.suelo_rect.topleft - self.offset
         self.mostrars.blit(self.suelo_superficie,suelooffset_pos)
 
-       # for sprite in self.sprites():
+        # for sprite in self.sprites():
         for sprite in sorted(self.sprites(),key = lambda sprite: sprite.rect.centery):
             offsetpos = sprite.rect.topleft - self.offset
             self.mostrars.blit(sprite.image,offsetpos)
