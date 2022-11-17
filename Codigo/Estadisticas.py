@@ -9,7 +9,7 @@ class Stats:
         self.tamañobarravida = pygame.Rect(1010,10,anchovida,alturavida)
         self.tamañobarraenergia = pygame.Rect(1100,40,anchobarraenergia,alturavida)
 
-         
+
     
     def mostrarbarra(self,actual,maximo,cuadrotrasero,color):
         pygame.draw.rect(self.mostrars,"black",cuadrotrasero)

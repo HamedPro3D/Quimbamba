@@ -32,4 +32,4 @@ class Arma(pygame.sprite.Sprite):
             self.rect = self.image.get_rect(midbottom = jugador.rect.midtop)
             self.image = pygame.image.load("./Grafico/test/rock.png").convert_alpha()
         print(jugador.estado)        
-       #     self.rect = self.image.get_rect(center = jugador.rect.center)
+    #     self.rect = self.image.get_rect(center = jugador.rect.center)
