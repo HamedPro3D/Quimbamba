@@ -89,6 +89,13 @@ class enemigo(entidades):
              if tiempoactual - self.tiempoataque >= self.esperaataque:
                   self.puedeatacar = True
 
+   # def dañarse(jugador,atacado,self):
+    #     if atacado:
+     #         self.healt -= jugador.dañodelarma()
+      #   else:
+       #       pass
+         
+    
     def update(self):
         self.move(self.velocidad)
         self.animacion()

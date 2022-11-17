@@ -40,9 +40,29 @@ class Jugador(entidades):
             if teclas[pygame.K_UP]:
                 self.direccion.y = -1
                 self.estado = "arriba"
+                self.sw = self.sw + 1
+                if(self.sw <= 15):
+                    self.image = pygame.image.load("./Grafico/player/arriba/1.png").convert_alpha()
+                if self.sw >= 5 :
+                    self.image = pygame.image.load("./Grafico/player/arriba/2.png").convert_alpha()
+                if self.sw >= 10:
+                    self.image = pygame.image.load("./Grafico/player/arriba/3.png").convert_alpha()
+                if self.sw >= 15:
+                    self.image = pygame.image.load("./Grafico/player/arriba/4.png").convert_alpha()
+                    self.sw=0
             elif teclas[pygame.K_DOWN]:
                 self.direccion.y = 1
                 self.estado = "abajo"
+                self.sw = self.sw + 1
+                if(self.sw <= 15):
+                    self.image = pygame.image.load("./Grafico/player/abajo/1.png").convert_alpha()
+                if self.sw >= 5 :
+                    self.image = pygame.image.load("./Grafico/player/abajo/2.png").convert_alpha()
+                if self.sw >= 10:
+                    self.image = pygame.image.load("./Grafico/player/abajo/3.png").convert_alpha()
+                if self.sw >= 15:
+                    self.image = pygame.image.load("./Grafico/player/abajo/4.png").convert_alpha()
+                    self.sw=0
             else:
                 self.direccion.y = 0
             if teclas[pygame.K_RIGHT]:
@@ -110,10 +130,26 @@ class Jugador(entidades):
             if teclas[pygame.K_k]:
                 print("transformacion")
                 self.image = pygame.image.load("./Grafico/test/rock.png").convert_alpha()
-
             if teclas[pygame.K_j]:
-                self.image = pygame.image.load("./Grafico/test/player.png").convert_alpha()
+                self.vida = self.estadisticas["vida"] * 1
+                self.energia = self.estadisticas["energia"] * 1
+            if teclas[pygame.K_h]:
+                self.vida = self.estadisticas["vida"] * 0
+                self.energia = self.estadisticas["energia"] * 0
+                self.estado = "muerto"
+                if self.estado == "muerto":
+                    self.image = pygame.image.load("./Grafico/player/muerte.png").convert_alpha()
+                if self.estado == "muerto_idel":
+                    self.image = pygame.image.load("./Grafico/player/muerte.png").convert_alpha()
+             #   self.image = pygame.image.load("./Grafico/test/player.png").convert_alpha()
+
+            #if teclas[pygame.K_j]:
+             #   self.image = pygame.image.load("./Grafico/test/player.png").convert_alpha()
             
+    def dañodelarma(self):
+        daño = self.estadisticas["ataque"]
+        return daño
+                
     def estados(self):
         #Idel
         if self.direccion.x == 0 and self.direccion.y == 0:

@@ -16,6 +16,9 @@ class Nivel:
         self.mostrars = pygame.display.get_surface()
         self.spritesv = YCamaraGrupo()
         self.obstaculos = pygame.sprite.Group()
+        self.ataqueactual = None
+        self.spritesataque = pygame.sprite.Group()
+        self.spritesataqueenemigos = pygame.sprite.Group()
 
         
 
@@ -47,7 +50,7 @@ class Nivel:
                         piso((x,y),[self.obstaculos],'invisible')
                    if style == "grass":
                         random_grass_i = choice(graphics["grass"])
-                        piso((x,y),[self.spritesv,self.obstaculos],"grass",random_grass_i)
+                        piso((x,y),[self.spritesv,self.obstaculos,self.spritesataqueenemigos],"grass",random_grass_i)
                    if style == "objetos":
                         superficie = graphics["objeto"][int(col)]
                         piso((x,y),[self.spritesv,self.obstaculos],"objeto",superficie)
@@ -63,7 +66,7 @@ class Nivel:
                                 nombrevariablemoustro = "raccoon"
                            elif col == "393":
                                 nombrevariablemoustro = "squid"
-                           enemigo(nombrevariablemoustro,(x,y),[self.spritesv],self.obstaculos)
+                           enemigo(nombrevariablemoustro,(x,y),[self.spritesv,self.spritesataqueenemigos],self.obstaculos)
             #    if col == "x":
             #        piso((x,y),[self.spritesv,self.obstaculos])
              #   if col == "p":
@@ -71,16 +74,29 @@ class Nivel:
 
     
     def atacar(self):
-        self.ataquea = Arma(self.jugador,[""])
+        self.ataqueactual = Arma(self.jugador,["",self.spritesataque])
     
     def magia(self):
-        self.ataquea = Magia(self.jugador,[self.spritesv])
+        self.ataqueactual = Magia(self.jugador,[self.spritesv,self.spritesataque])
+
+    def logicaataquesp(self):
+        if self.spritesataque:
+            for spriteataque in self.spritesataque:
+                colisionsprites = pygame.sprite.spritecollide(spriteataque,self.spritesataqueenemigos,False)
+                if colisionsprites:
+                    for objetivo in colisionsprites:
+                        #objetivo.kill()
+                        if objetivo.sprite_type == "grass":
+                            objetivo.kill()
+                        else:
+                            objetivo.kill()
 
     def run(self):
         self.spritesv.custom_draw(self.jugador)
         self.spritesv.update()
         self.spritesv.actualizacionenemigo(self.jugador)
         self.stats.display(self.jugador)
+        self.logicaataquesp()
         debug(self.jugador.estado)
 
 class YCamaraGrupo(pygame.sprite.Group):
