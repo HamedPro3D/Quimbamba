@@ -1,4 +1,4 @@
-<p class=text-align-justify> <h2> Proyecto Final </h2> 
+<center> <h2> Proyecto Final </h2> 
 **Integrante 1, *** Integrante 2
 
 ** Estudiante de Ingeniería Chanel Naomi Olier Watson, Código: 200110086 
@@ -12,7 +12,7 @@ Programación Orientada a Objetos
 Fecha (17-11-22) 
 
 Barranquilla-Colombia 
-</p>
+</center>
 
 ### **Estructura y contenido**
 
@@ -55,6 +55,7 @@ Barranquilla-Colombia
 	* <h5> Descripción jerárquica </h5> <p class=text-align-justify> El programa se encuentra organizado por módulos de Python bajo el modelo <u>POO</u>. Por lo que agrupa una colección de objetos de la misma estructura para conformar una clase, siendo así cada objeto una instancia de su clase. </p>
 	* <h5> Diagrama de módulos (UML) </h5>
 		* <b> Imagen del UML </b>
+		
 		![UML__Quimbamba](https://user-images.githubusercontent.com/105728306/202447113-118f2d9d-8beb-472e-b100-7fc7e5006c53.png)
 		* <b> Codigo del UML </b>
 		<pre>
