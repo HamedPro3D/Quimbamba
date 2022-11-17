@@ -1,0 +1,75 @@
+@startuml Quimbamba
+class Ajustes{
+Largo: int
+Ancho: int
+FPS: int
+TILESIZE: int
+WORLD_MAP: str
+}
+
+class Debug{
+font: str
+debug(info, y: int, x: int)
+}
+
+class Jugador{
+pos: float
+grupos: float
+obstaculos: str
+image: str
+rect: int
+hitbox: int
+estado: str
+animaciondent: int
+velocidadanimacion: float
+direccion: int
+velocidad: int
+ataque: boolean
+ataqueesp: int
+sw: int
+animaciones(self)
+input(self)
+estados(self)
+move(self, velocidad: int)
+espera(self)
+secuencia(self)
+colicion(self, direccion: int )
+update(self)
+}
+        
+class Main{
+pantalla: str
+frames: float
+run(self)
+}
+
+class Nivel{
+mostrars: str
+spritev: str
+obstaculos: str
+crearmapa(self)
+run(self)
+}
+class YCamaraGrupo{
+mostrars: int
+mitadancho: int
+mitadlargo: int
+offset: int
+suelo_superficie: str
+suelo_rect: int
+custom_draw(self, jugador: int)
+}
+class Soporte{
+impor_csv_layout(path: str)
+import_folder(path: str)
+}
+
+class Suelo{
+pos: int
+grupos: float
+sprite_type: str
+surface: str
+image: int
+
+}
+
