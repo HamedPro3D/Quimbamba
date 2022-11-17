@@ -1,4 +1,4 @@
-<center> <h2> Proyecto Final </h2> 
+<p class=text-align-justify> <h2> Proyecto Final </h2> 
 **Integrante 1, *** Integrante 2
 
 ** Estudiante de Ingeniería Chanel Naomi Olier Watson, Código: 200110086 
@@ -12,7 +12,7 @@ Programación Orientada a Objetos
 Fecha (17-11-22) 
 
 Barranquilla-Colombia 
-</center>
+</p>
 
 ### **Estructura y contenido**
 
@@ -55,6 +55,7 @@ Barranquilla-Colombia
 	* <h5> Descripción jerárquica </h5> <p class=text-align-justify> El programa se encuentra organizado por módulos de Python bajo el modelo <u>POO</u>. Por lo que agrupa una colección de objetos de la misma estructura para conformar una clase, siendo así cada objeto una instancia de su clase. </p>
 	* <h5> Diagrama de módulos (UML) </h5>
 		* <b> Imagen del UML </b>
+		![UML__Quimbamba](https://user-images.githubusercontent.com/105728306/202447113-118f2d9d-8beb-472e-b100-7fc7e5006c53.png)
 		* <b> Codigo del UML </b>
 		<pre>
 			@startuml Quimbamba
@@ -162,8 +163,7 @@ Barranquilla-Colombia
 	 <p class=text-align-justify><em> Se indica el propósito y breve descripción de cada método/función, con su prototipo indicando argumentos (nombre, tipo, propósito de cada uno) y respuesta (tipo, descripción).</p> 
 	<p class=text-align-justify>Para llevar a cabo esta tarea, es posible utilizar una variedad de herramientas de generación de documentación automática, a partir del código en el encabezado de cada función (por ejemplo Javadoc, PHPDoc, Doxygen, etc).
 	<p class=text-align-justify> La documentación técnica debe pensarse como el manual del programador, y debe apuntar a aquellas personas que estarán a cargo de mantener, ampliar, o crear un proyecto derivado a partir de nuestro proyecto. </em></p>
-### Aspectos relevantes
-### Herramientas 
+
 
 *[POO]: Programación Orientada a Objetos
 *[UML]: Lenguaje Unificado de Modelado
