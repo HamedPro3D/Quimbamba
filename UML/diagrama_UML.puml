@@ -1,5 +1,6 @@
 @startuml Quimbamba
-class Ajustes{
+Title Diagrama UML de Quimbamba
+class Ajustes #lightgreen;line:darkgreen{
 Largo: int
 Ancho: int
 FPS: int
@@ -7,12 +8,12 @@ TILESIZE: int
 WORLD_MAP: str
 }
 
-class Debug{
+class Debug #lightgreen;line:darkgreen{
 font: str
 debug(info, y: int, x: int)
 }
 
-class Jugador{
+class Jugador #lightgreen;line:darkgreen{
 pos: float
 grupos: float
 obstaculos: str
@@ -37,20 +38,21 @@ colicion(self, direccion: int )
 update(self)
 }
         
-class Main{
+class Main #lightgreen;line:darkgreen{
 pantalla: str
 frames: float
 run(self)
 }
 
-class Nivel{
+class Nivel #lightgreen;line:darkgreen{
 mostrars: str
 spritev: str
 obstaculos: str
 crearmapa(self)
 run(self)
 }
-class YCamaraGrupo{
+
+class YCamaraGrupo #lightgreen;line:darkgreen{
 mostrars: int
 mitadancho: int
 mitadlargo: int
@@ -59,17 +61,29 @@ suelo_superficie: str
 suelo_rect: int
 custom_draw(self, jugador: int)
 }
-class Soporte{
-impor_csv_layout(path: str)
+
+class Soporte #lightgreen;line:darkgreen{
+import_csv_layout(path: str)
 import_folder(path: str)
 }
 
-class Suelo{
+class Suelo #lightgreen;line:darkgreen{
 pos: int
 grupos: float
 sprite_type: str
 surface: str
 image: int
-
 }
 
+Ajustes " 1 " <--* "    1 " Main
+Nivel--* " 1 "Main
+Debug " * "-- "       1   "Main
+Jugador " * " --> " 1 " Ajustes
+Jugador " * " *-- " * "Soporte
+Nivel " * "--> " 1 "Ajustes
+Nivel " * "--* " * "Jugador
+Nivel " * "-- " * "Debug
+Nivel " * "*-- " * "Suelo
+Nivel " * " *-- " * " Soporte
+Nivel " * " *-- YCamaraGrupo: compone
+Suelo " * " *--> " 1 " Ajustes
