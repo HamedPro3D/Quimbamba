@@ -17,7 +17,7 @@ Barranquilla-Colombia
 ### **Estructura y contenido**
 
 1. #### **Definiciones y especificación de requerimientos**
-	*  <h5> Definición general del proyecto de software </h5> <p class=text-align-justify>[nombre del juego] es un juego 2D tipo Souls-like de acción y aventura. Inspirado en el famoso juego Zelda buscando crear un juego de alta dificultad que para los amantes de los clásicos 2D. </p>
+	*  <h5> Definición general del proyecto de software </h5> <p class=text-align-justify>Quimbamba es un juego 2D tipo Souls-like de acción y aventura. Inspirado en el famoso juego Zelda buscando crear un juego de alta dificultad que para los amantes de los clásicos 2D. </p>
 	* ##### **Especificación de requerimientos del proyecto** 
 		* **Requerimientos generales:**
 			* Un solo jugador
@@ -34,7 +34,6 @@ Barranquilla-Colombia
 			*  Notificación de nivel completado
 
 		* **Información de autoria y legacy del proyecto**: <p class=text-align-justify> <em>explicitar si el proyecto de software forma parte de desarrollos previos/preexistentes o si es original, y en el caso correspondiente, detalles de retro-compatibilidad. </em> </p>
-		* **Alcances del sistema:** <p class=text-align-justify><em> las limitaciones y alcances del desarrollo, de acuerdo a los objetivos previamente establecidos. </em> </p>
 
 	* ##### Procedimientos
 		* **procedimientos de desarrollo:** 
@@ -42,98 +41,184 @@ Barranquilla-Colombia
 				* Visual Studio Code: Un editor de código, en donde se escribió todo el código del programa.
 				* Tiled: Es un editor de mapas con en cual se diseñó el mapa del juego.
 				* Craftpix.net: Pagina que dispone recursos gráficos premiums y de libre uso. 
-				* Aseprite: Es un editor de gráficos rasterizados, con el cual se diseñaron los sprites de los personajes.</p>
-			* **Planificación:** <p class=text-align-justify> <em>una descripción global de la metodología utilizada para encarar y resolver el problema; por ejemplo: los pasos ejecutados a lo largo de la resolución del proyecto, a grandes rasgos.</em> </p>
+				* Aseprite: Es un editor de gráficos rasterizados, con el cual se diseñaron los sprites del  juego; como los personajes, enemigos y otros.
+				* Adobe Illustrator: Es un editor de gráficos vectoriales con el cual se editaron los sprites del juego.</p>
+			* **Planificación:** <p class=text-align-justify> El proceso de codificación del programa bastante educativo, ya que nos obligó a ir más allá de nuestros conocimientos previos. No está de más decir que no se sabia por donde empezar y al hacerlo habían muchos errores que no se sabían solucionar. También se tuvo que aprender ha hacer una cámara, una inteligencia artificial y a manjar el módulo de Python pymage.</p>
 		* **Procedimientos de instalación y prueba:** 
 			* **Requisitos no funcionales:**
 				* Buen rendimiento
 				* Cero bugs
 			* **Especificaciones de prueba y ejecución:** 
-			<p class=text-align-justify> Para este proyecto no se creará ejecutable por lo que el programa correrá directamente del editor de código VSC. EL interprete será el lenguaje de programación  <em><b>Python v3.10.</b></em> </p>
 
+			<p class=text-align-justify> Para este proyecto no se creará ejecutable por lo que el programa correrá directamente del editor de código VSC. EL interprete será el lenguaje de programación  <em><b>Python v3.10.7</b></em> </p>
 2. #### Arquitectura del sistema
 	* <h5> Descripción jerárquica </h5> <p class=text-align-justify> El programa se encuentra organizado por módulos de Python bajo el modelo <u>POO</u>. Por lo que agrupa una colección de objetos de la misma estructura para conformar una clase, siendo así cada objeto una instancia de su clase. </p>
 	* <h5> Diagrama de módulos (UML) </h5>
 		* <b> Imagen del UML </b>
 		
-		![UML__Quimbamba](https://user-images.githubusercontent.com/105728306/202447113-118f2d9d-8beb-472e-b100-7fc7e5006c53.png)
+		![UML__Quimbamba](UML/UML__Quimbamba-Actualizado.png)
 		* <b> Codigo del UML </b>
 		<pre>
 			@startuml Quimbamba
 			Title Diagrama UML de Quimbamba
 			class Ajustes #lightgreen;line:darkgreen{
-			Largo: int
-			Ancho: int
-			FPS: int
-			TILESIZE: int
-			WORLD_MAP: str
+			Largo:int
+			Ancho:int
+			FPS:int
+			TILESIZE:int
+			alturavida:int
+			anchovida:int
+			anchobarraenergia:int
+			tamañocorazon:int
+			ubicacion:str
+			tamañofuente:int
+			WORLD_MAP:str
+			}
+			
+			class Armas #lightgreen;line:darkgreen{
+			jugador:int
+			image:str
+			grupos:float
 			}
 			
 			class Debug #lightgreen;line:darkgreen{
-			font: str
-			debug(info, y: int, x: int)
+			font:str
+			debug(info,y:int,x:int)
+			}
+			
+			class Enemigos #lightgreen;line:darkgreen{
+			nombremoustro:
+			pos:float
+			grupos:float
+			obstaculos:str
+			estado:int
+			image:str
+			rect:int
+			hitbox:int
+			nombremoustro:str
+			moustroinfo:str
+			vida:int
+			xp:int
+			velocidad:int
+			daño:int
+			resistencia:int
+			radioataque:int
+			deteccion:int
+			tipo:int
+			puedeatacar:Boolean
+			tiempoataque:int
+			esperaataque:int
+			importargraficos(name:str)
+			get_player_distance_direction(player)
+			tomarestado(jugador:int)
+			acciones(jugador:int)
+			animacion()
+			esperaataques()
+			update()
+			actualizacionenemigos(jugador:int)
+			}
+			
+			class Entidad #lightgreen;line:darkgreen{
+			grupos:float
+			framesi:int
+			animacionv:float
+			direccion:int
+			move(velovidad:int)
+			colision(direccion:int)
+			}
+			
+			class Estadisticas #lightgreen;line:darkgreen{
+			mostrars:str
+			font:(str,int)
+			tamañobarravida:int
+			tamañobarraenergia:int
+			mostrarbarra(actual:int, maximo:int, cuadrotrasero:int, color:str)
+			mostrarexperiencia(xp:int)
+			display(jugador:int)
+			}
+			
+			class Magia #lightgreen;line:darkgreen{
+			jugador:int
+			grupos:float
+			image:str
 			}
 			
 			class Jugador #lightgreen;line:darkgreen{
-			pos: float
-			grupos: float
-			obstaculos: str
-			image: str
-			rect: int
-			hitbox: int
-			estado: str
-			animaciondent: int
-			velocidadanimacion: float
-			direccion: int
-			velocidad: int
+			pos:float
+			grupos:float
+			obstaculos:str
+			image:str
+			rect:int
+			hitbox:int
+			estado:int
+			animaciondent:int
+			velocidadanimacion:float
+			direccion:int
+			velocidad:int
 			ataque: boolean
-			ataqueesp: int
-			sw: int
-			animaciones(self)
-			input(self)
-			estados(self)
-			move(self, velocidad: int)
-			espera(self)
-			secuencia(self)
-			colicion(self, direccion: int )
-			update(self)
+			ataqueesp:int
+			sw:int
+			atacar:str
+			magia:str
+			estadisticas:int
+			vida:float
+			energia:float
+			xp:int
+			velocidad:int
+			animaciones()
+			input()
+			estados()
+			move(velocidad:int)
+			espera()
+			secuencia()
+			colicion(direccion:int )
+			update()
 			}
 			        
 			class Main #lightgreen;line:darkgreen{
-			pantalla: str
-			frames: float
-			run(self)
+			pantalla:str
+			frames:float
+			run()
 			}
 			
 			class Nivel #lightgreen;line:darkgreen{
-			mostrars: str
-			spritev: str
+			mostrars:str
+			spritev:str
 			obstaculos: str
-			crearmapa(self)
-			run(self)
+			ataqueactual:int
+			spritesataque:str
+			spritesataqueenemigos:str
+			stats:int
+			crearmapa()
+			atacar()
+			magia()
+			logicaataquesp()
+			run()
+			
 			}
 			
 			class YCamaraGrupo #lightgreen;line:darkgreen{
-			mostrars: int
-			mitadancho: int
-			mitadlargo: int
-			offset: int
+			mostrars:int
+			mitadancho:int
+			mitadlargo:int
+			offset:int
 			suelo_superficie: str
-			suelo_rect: int
-			custom_draw(self, jugador: int)
+			suelo_rect:int
+			custom_draw(jugador:int)
+			actualizacionenemigo(jugdor:int)
 			}
 			
 			class Soporte #lightgreen;line:darkgreen{
-			import_csv_layout(path: str)
-			import_folder(path: str)
+			import_csv_layout(path:str)
+			import_folder(path:str)
 			}
 			
 			class Suelo #lightgreen;line:darkgreen{
-			pos: int
-			grupos: float
-			sprite_type: str
-			surface: str
-			image: int
+			pos:int
+			grupos:float
+			sprite_type:str
+			surface:str
+			image:int
 			}
 			
 			Ajustes " 1 " <--* "    1 " Main
@@ -141,29 +226,84 @@ Barranquilla-Colombia
 			Debug " * "-- "       1   "Main
 			Jugador " * " --> " 1 " Ajustes
 			Jugador " * " *-- " * "Soporte
+			Magia" * "--* " * "Jugador
+			Armas" * "--* " * "Jugador
+			Enemigos " * "--> " 1 "Ajustes
+			Enemigos " * " *-- " * " Soporte
+			Enemigos " * " *-- " * " Entidad
 			Nivel " * "--> " 1 "Ajustes
 			Nivel " * "--* " * "Jugador
 			Nivel " * "-- " * "Debug
+			Nivel " * "-- " * " Estadisticas
+			Nivel " * "-- " * "Magia
+			Nivel " * "-- " * "Enemigos
 			Nivel " * "*-- " * "Suelo
 			Nivel " * " *-- " * " Soporte
 			Nivel " * " *-- YCamaraGrupo: compone
 			Suelo " * " *--> " 1 " Ajustes
 	</code></pre>
 	* <h5> Descripción general de los módulos </h5>
-		<p class=text-align-justify><em>*Para cada módulo o parte del sistema, se debería realizar una breve descripción del mismo, la cual debería incluir mínimamente:  </em></p>
-		* <b> Descripción general y propósito:</b><p class=text-align-justify><em> ¿qué es y qué debería hacer el módulo? </em></p>
-		* <b> Responsabilidad y restricciones:</b> <p class=text-align-justify><em> ¿cuál es su función específica dentro del sistema? ¿qué cosas puede y no puede hacer? </em></p>
-		* <b> Dependencias:</b> <p class=text-align-justify><em>  Indicar cuales son los requisitos del módulo, es decir se debe contestar a preguntas tales como _¿qué necesita o requiere el módulo para funcionar? ¿necesita de servicios brindados por otros módulos o por librerías externas?</em></p>
-		* <b> Implementación: </b><p class=text-align-justify><em> indicar en qué archivo o archivos se encuentra la implementación del módulo.
+
+		* <b> Descripción general y propósito:</b>
+			* <p class=text-align-justify> <b> Módulo Ajustes: </b> Se encarga de administrar las variables fijas que necesita el programa.</p>
+			* <p class=text-align-justify> <b> Módulo Armas: </b> </p>
+			* <p class=text-align-justify> <b> Módulo Debug: </b> </p>
+			* <p class=text-align-justify> <b> Módulo Enemigos: </b> </p>
+			* <p class=text-align-justify> <b> Módulo Entidad: </b> </p>
+			* <p class=text-align-justify> <b> Módulo  Estadisticas: </b> </p>
+			* <p class=text-align-justify> <b> Módulo Jugador: </b> </p>
+			* <p class=text-align-justify> <b> Módulo Magia:</b> </p>
+			* <p class=text-align-justify> <b> Módulo Main: </b> Es el encargado de correr el programa llamando a las otras clases.</p>
+			* <p class=text-align-justify> <b> Módulo Nivel: </b> Crea el mapa especifico del nivel con los aspectos graficos visuales (las imagr¿enes del los objetos y el suelo) y los no visuales (los box de colisiones). Tambien Procesa los ataques del jugador para saber que debe borrar de pantalla. Tiene una clase llamada YCamaraGrupo la cual es la camara que sigue al jugador</p>
+			* <p class=text-align-justify> <b> Módulo Soporte: </b> Se encarga de gestionar los CSV del mapa, objetos y coliciones pasando los dados a dos listas</p>
+			* <p class=text-align-justify> <b> Módulo suelo: </b> </p>
+		* <b> Responsabilidad y restricciones:</b> <p class=text-align-justify> </p>
+
+			* <p class=text-align-justify> <b> Módulo Armas: </b> </p> 
+				* módulo pygame
+				* módulo Jugador
+			* <p class=text-align-justify> <b> Módulo Debug: </b> </p>
+				* módulo pygame
+			* <p class=text-align-justify> <b> Módulo Enemigos: </b></p>
+				* módulo pygame
+				* módulo Ajustes
+				* módulo Entidad -> clase Entidades
+				* módulo Soporte
+			* <p class=text-align-justify> <b> Módulo Entidad: </b> módulo pygame</p>
+			* <p class=text-align-justify> <b> Módulo  Estadisticas: </b> módulo pygame, módulo Ajustes</p>
+			* <p class=text-align-justify> <b> Módulo Jugador: </b> </p>
+				* módulo pygame
+				* módulo Ajustes
+				* módulo Entidad -> clase Entidades
+			* <p class=text-align-justify> <b> Módulo Magia:</b> </p>
+				* módulo pygame
+				* módulo Jugado
+			* <p class=text-align-justify> <b> Módulo Main: </b> </p>
+				* módulo pygame
+				* módulo sys
+				* módulo Nivel
+			* <p class=text-align-justify> <b> Módulo Nivel: </b> </p>
+				* módulo pygame
+				* módulo random
+				* módulo Ajustes
+				* módulo Soporte
+				* módulo suelo -> clase piso
+				* módulo Jugador->clase Jugador
+				* módulo Debug->función debug
+				* módulo Armas->clase arma
+				* módulo Magia->clase Magia
+				* módulo Estadisticas->clase stats
+				* módulo Enemigos->clase enemigo
+			* <p class=text-align-justify> <b> Módulo Soporte: </b> </p>
+				* módulo csv->función reader
+				* módulo os->función walk
+			* <p class=text-align-justify> <b> Módulo suelo: </b> </p>
+				* módulo pygame
+				* módulo Ajuses
 		
-			No es el objetivo de esta sección dar detalles de _cómo_ se realiza la implementación de los módulos, sino únicamente dar una idea general de _para qué_ existe el módulo dentro del sistema. </em></p>
-	* <h5> Dependencias externas </h5><p class=text-align-justify><em>Si el software utiliza librerías o servicios externos estos deben listarse junto con una breve descripción de las mismas.</p>
-	Adicionalmente en esta sección se deben listar los **aspectos técnicos** o **tecnologías empleadas** en el proyecto, tales como el lenguaje de programación, _frameworks_, librerías, etc.</p>
-	Puede resultar de utilidad incluir junto a estos una breve descripción de las decisiones de diseño asociadas que llevaron a elegir la o las tecnologías en particular, es decir responder a _¿por qué se utilizó esta tecnología y no otra?_</em></p>
+
 3. <h4> Documentación técnica </h4>
-	 <p class=text-align-justify><em> Se indica el propósito y breve descripción de cada método/función, con su prototipo indicando argumentos (nombre, tipo, propósito de cada uno) y respuesta (tipo, descripción).</p> 
-	<p class=text-align-justify>Para llevar a cabo esta tarea, es posible utilizar una variedad de herramientas de generación de documentación automática, a partir del código en el encabezado de cada función (por ejemplo Javadoc, PHPDoc, Doxygen, etc).
-	<p class=text-align-justify> La documentación técnica debe pensarse como el manual del programador, y debe apuntar a aquellas personas que estarán a cargo de mantener, ampliar, o crear un proyecto derivado a partir de nuestro proyecto. </em></p>
+	 
 
 
 *[POO]: Programación Orientada a Objetos
