@@ -2,6 +2,7 @@ import pygame
 from Jugador import *
 
 class Arma(pygame.sprite.Sprite):
+    
     def __init__(self,jugador,grupos):
         super().__init__(grupos)
 

@@ -1,4 +1,6 @@
-# game setup
+"""
+Guarda los ajustes del programa que son constantes.
+"""
 Ancho    = 1280	
 Largo   = 720
 FPS      = 60

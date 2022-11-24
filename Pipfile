@@ -5,6 +5,11 @@ name = "pypi"
 
 [packages]
 pygame = "*"
+mkdocs = "*"
+mkdocstrings = {extras = ["python"], version = "*"}
+mkdocs-material = "*"
+mkdocs-gitbook = "*"
+mkdocs-custommill = "*"
 
 [dev-packages]
 

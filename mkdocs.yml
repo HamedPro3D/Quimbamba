@@ -1,0 +1,11 @@
+site_name: Programa Quimbamba
+
+theme:
+  name: "material"
+
+nav:
+  - Presentación: index.md
+  - Definiciones y especificación de requerimientos.md
+  - Procedimientos.md
+  - Descripción jerárquica.md
+  - Descripción general de los módulos.md
