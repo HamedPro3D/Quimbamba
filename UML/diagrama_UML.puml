@@ -30,20 +30,20 @@ nombremoustro:
 pos:float
 grupos:float
 obstaculos:str
-estado:str
+estado:int
 image:str
 rect:int
 hitbox:int
 nombremoustro:str
 moustroinfo:str
 vida:int
-xp:str
+xp:int
 velocidad:int
 daño:int
-resistencia:str
-radioataque_str
-deteccion:str
-tipo:str
+resistencia:int
+radioataque:int
+deteccion:int
+tipo:int
 puedeatacar:Boolean
 tiempoataque:int
 esperaataque:int
@@ -72,7 +72,7 @@ font:(str,int)
 tamañobarravida:int
 tamañobarraenergia:int
 mostrarbarra(actual:int, maximo:int, cuadrotrasero:int, color:str)
-mostrarexperiencia(xp:str)
+mostrarexperiencia(xp:int)
 display(jugador:int)
 }
 
@@ -89,7 +89,7 @@ obstaculos:str
 image:str
 rect:int
 hitbox:int
-estado:str
+estado:int
 animaciondent:int
 velocidadanimacion:float
 direccion:int
@@ -124,8 +124,16 @@ class Nivel #lightgreen;line:darkgreen{
 mostrars:str
 spritev:str
 obstaculos: str
+ataqueactual:int
+spritesataque:str
+spritesataqueenemigos:str
+stats:int
 crearmapa()
+atacar()
+magia()
+logicaataquesp()
 run()
+
 }
 
 class YCamaraGrupo #lightgreen;line:darkgreen{
@@ -136,6 +144,7 @@ offset:int
 suelo_superficie: str
 suelo_rect:int
 custom_draw(jugador:int)
+actualizacionenemigo(jugdor:int)
 }
 
 class Soporte #lightgreen;line:darkgreen{
