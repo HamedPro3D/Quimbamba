@@ -55,7 +55,7 @@ class enemigo(entidades):
 
         if distancia <= self.radioataque and self.puedeatacar == True:
             if self.estado != "attack":
-                 self.framesi = 0
+                self.framesi = 0
             self.estado = "attack"
         elif distancia <= self.deteccion:
             self.estado = "move"
@@ -63,38 +63,38 @@ class enemigo(entidades):
             self.estado = "idle"
 
     def acciones(self,jugador):
-         if self.estado == "attack":
-              self.tiempoataque = pygame.time.get_ticks()
-              print("atacando")
-         elif self.estado == "move":
-              self.direccion =self.get_player_distance_direction(jugador)[1]
-         else:
-              self.direccion = pygame.math.Vector2()
+        if self.estado == "attack":
+            self.tiempoataque = pygame.time.get_ticks()
+            print("atacando")
+        elif self.estado == "move":
+            self.direccion =self.get_player_distance_direction(jugador)[1]
+        else:
+            self.direccion = pygame.math.Vector2()
 
     def animacion(self):
-         animacione = self.animaciones[self.estado]
+        animacione = self.animaciones[self.estado]
 
-         self.framesi += self.animacionv
-         if self.framesi >= len(animacione):
-              if self.estado == "attack":
-                   self.puedeatacar = False
-              self.framesi = 0
+        self.framesi += self.animacionv
+        if self.framesi >= len(animacione):
+            if self.estado == "attack":
+                self.puedeatacar = False
+            self.framesi = 0
 
-         self.image = animacione[int(self.framesi)]
-         self.rect = self.image.get_rect(center = self.hitbox.center)
+        self.image = animacione[int(self.framesi)]
+        self.rect = self.image.get_rect(center = self.hitbox.center)
             
     def esperaataques(self):
         if not self.puedeatacar:
-             tiempoactual = pygame.time.get_ticks()
-             if tiempoactual - self.tiempoataque >= self.esperaataque:
-                  self.puedeatacar = True
+            tiempoactual = pygame.time.get_ticks()
+            if tiempoactual - self.tiempoataque >= self.esperaataque:
+                self.puedeatacar = True
 
-   # def dañarse(jugador,atacado,self):
+# def dañarse(jugador,atacado,self):
     #     if atacado:
-     #         self.healt -= jugador.dañodelarma()
-      #   else:
-       #       pass
-         
+    #         self.healt -= jugador.dañodelarma()
+    #   else:
+    #       pass
+        
     
     def update(self):
         self.move(self.velocidad)
