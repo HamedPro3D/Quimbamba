@@ -14,6 +14,3 @@
 *  Salir del juego
 *  Avanzar al siguiente nivel
 *  Notificación de nivel completado
-
-## **Información de autoria y legacy del proyecto**: 
-<p class=text-align-justify> <em>explicitar si el proyecto de software forma parte de desarrollos previos/preexistentes o si es original, y en el caso correspondiente, detalles de retro-compatibilidad. </em> </p>

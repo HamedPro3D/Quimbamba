@@ -2,10 +2,10 @@
 Integrante 1,  Integrante 2
 
 
-Estudiante de Ingeniería: Chanel Naomi Olier Watson
+Estudiante de Ingeniería: Chanel Naomi Olier Watson, Codigo: 200110086
 
 
-Estudiante de Ingeniería: Hamed J. Elneser Tejeda
+Estudiante de Ingeniería: Hamed J. Elneser Tejeda, Codigo: 200097207
 
 <b>Profesor:</b> Pedro Jose D. Posada Aguilar 
 
