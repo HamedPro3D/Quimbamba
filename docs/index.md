@@ -2,10 +2,10 @@
 Integrante 1,  Integrante 2
 
 
-Estudiante de Ingeniería Chanel Naomi Olier Watson, Código: 200110086 
+Estudiante de Ingeniería: Chanel Naomi Olier Watson
 
 
-Estudiante de Ingeniería Hamed J. Elneser Tejeda, Código: xxxxxxxxxx 
+Estudiante de Ingeniería: Hamed J. Elneser Tejeda
 
 <b>Profesor:</b> Pedro Jose D. Posada Aguilar 
 
@@ -17,7 +17,7 @@ Barranquilla-Colombia
 </center>
 
 ## Repositorio de GitHub 
-https://github.com/HamedPro3D/Quimbamba/
+[Quimbamba](https://github.com/HamedPro3D/Quimbamba)
 
 
 

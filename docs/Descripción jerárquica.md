@@ -3,6 +3,8 @@
 ## Diagrama de módulos (UML)
 * ### **Imagen del UML**
     
+    [UML_Quimbamba](https://github.com/HamedPro3D/Quimbamba/blob/2908d8725c81ee489447c97c70311d9617feacd4/UML/UML__Quimbamba-Actualizado.png)
+
     ![UML_Quimbamba](UML__Quimbamba-Actualizado.png)
 
 * ### <b> Codigo del UML </b>
@@ -192,4 +194,5 @@
 </code></pre>
 
 *[POO]: Programación Orientada a Objeto
+
 *[UML]: Lenguaje Unificado de Modelado
