@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>oop_project</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+html {
+  font-size: 12px;
+}
+
+@media screen and (min-width: 32rem) and (max-width: 48rem) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+  line-height: 1.85;
+}
+
+p,
+.splendor-p {
+  font-size: 1rem;
+  margin-bottom: 1.3rem;
+  
+}
+
+h1,
+.splendor-h1,
+h2,
+.splendor-h2,
+h3,
+.splendor-h3,
+h4,
+.splendor-h4 {
+  margin: 1.414rem 0 .5rem;
+  font-weight: inherit;
+  line-height: 1.42;
+}
+
+h1,
+.splendor-h1 {
+  margin-top: 0;
+  font-size: 3.998rem;
+}
+
+h2,
+.splendor-h2 {
+  font-size: 2.827rem;
+}
+
+h3,
+.splendor-h3 {
+  font-size: 1.999rem;
+}
+
+h4,
+.splendor-h4 {
+  font-size: 1.414rem;
+}
+
+h5,
+.splendor-h5 {
+  font-size: 1.121rem;
+}
+
+h6,
+.splendor-h6 {
+  font-size: .88rem;
+}
+
+small,
+.splendor-small {
+  font-size: .707em;
+}
+
+/* https://github.com/mrmrs/fluidity */
+
+img,
+canvas,
+iframe,
+video,
+svg,
+select,
+textarea {
+  max-width: 100%;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Merriweather:300italic,300);
+
+html {
+  font-size: 18px;
+  max-width: 100%;
+}
+
+body {
+  color: #444;
+  font-family: 'Merriweather', Georgia, serif;
+  margin: 0;
+  max-width: 100%;
+}
+
+/* === A bit of a gross hack so we can have bleeding divs/blockquotes. */
+
+p,
+*:not(div):not(hr):not(img):not(body):not(html):not(li):not(blockquote):not(p){
+  margin: 1rem auto 1rem;
+  max-width: 36rem;
+  padding: .25rem;
+}
+
+div {
+  width: 100%;
+}
+
+div img {
+  width: 100%;
+}
+
+blockquote p {
+  font-size: 1.5rem;
+  font-style: italic;
+  margin: 1rem auto 1rem;
+  max-width: 48rem;
+}
+
+li {
+  margin-left: 2rem;
+}
+
+/* Counteract the specificity of the gross *:not() chain. */
+
+h1 {
+  padding: 4rem 0 !important;
+}
+
+/*  === End gross hack */
+
+p {
+  color: #555;
+  height: auto;
+  line-height: 1.45;
+}
+
+pre,
+code {
+  font-family: Menlo, Monaco, "Courier New", monospace;
+}
+
+pre {
+  background-color: #fafafa;
+  font-size: .8rem;
+  overflow-x: scroll;
+  padding: 1.125em;
+}
+
+a,
+a:visited {
+  color: #3498db;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: #2980b9;
+}
+.text-align-justify{
+   text-align:justify;
+}
+
+.text-align-left{
+  text-align: left;
+}
+</style>
+</head>
+<body>
+<p><center> <h2> Proyecto Final </h2> 
+**Integrante 1, *** Integrante 2</p>
+<p>** Estudiante de Ingeniería Chanel Naomi Olier Watson, Código: 200110086 </p>
+<p>*** Estudiante de Ingeniería Hamed J. Elneser Tejeda, Código: 200097207 </p>
+<p><b>Profesor:</b> Pedro Jose D. Posada Aguilar </p>
+<p>Programación Orientada a Objetos </p>
+<p>Fecha (17-11-22) </p>
+<p>Barranquilla-Colombia 
+</center></p>
+<h3><strong>Estructura y contenido</strong></h3>
+<ol>
+<li>
+<h4><strong>Definiciones y especificación de requerimientos</strong></h4>
+<ul>
+<li><h5> Definición general del proyecto de software </h5> <p class=text-align-justify>Quimbamba es un juego 2D tipo Souls-like de acción y aventura. Inspirado en el famoso juego Zelda buscando crear un juego de alta dificultad que para los amantes de los clásicos 2D. </p></li>
+<li>
+<h5><strong>Especificación de requerimientos del proyecto</strong></h5>
+<ul>
+<li>
+<strong>Requerimientos generales:</strong>
+<ul>
+<li>Un solo jugador</li>
+<li>Buena jugabilidad</li>
+</ul>
+</li>
+<li>
+<strong>Requerimientos funcionales:</strong>
+<ul>
+<li>Visualizar cuando se pierde una vida</li>
+<li>Mostrar notificación de perdida de vida</li>
+<li>Visualizar el menú de opciones</li>
+<li>Poder seccionar el personaje deseado para la partida.</li>
+<li>Visualizar animación del personaje caminando (hacia izquierda y derecha)</li>
+<li>Ingresar al juego</li>
+<li>Salir del juego</li>
+<li>Avanzar al siguiente nivel</li>
+<li>Notificación de nivel completado</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<h5>Procedimientos</h5>
+<ul>
+<li>
+<strong>procedimientos de desarrollo:</strong> 
+<ul>
+<li>
+<strong>Herramientas utilizadas:<p class=text-align-justify></strong> Para la creación del programa se utilizó una variedad de herramientas, las cuales son: 
+<ul>
+<li><strong>Visual Studio Code:</strong> Un editor de código, en donde se escribió todo el código del programa.</li>
+<li><strong>Tiled:</strong> Es un editor de mapas con en cual se diseñó el mapa del juego.</li>
+<li><strong>Craftpix.net:</strong> Pagina que dispone recursos gráficos premiums y de libre uso. </li>
+<li><strong>Aseprite:</strong> Es un editor de gráficos rasterizados, con el cual se diseñaron los sprites del  juego; como los personajes, enemigos y otros.</li>
+<li><strong>Adobe Illustrator:</strong> Es un editor de gráficos vectoriales con el cual se editaron los sprites del juego.</p></li>
+</ul>
+</li>
+<li><strong>Planificación:</strong> <p class=text-align-justify> El proceso de codificación del programa bastante educativo, ya que nos obligó a ir más allá de nuestros conocimientos previos. No está de más decir que no se sabia por donde empezar y al hacerlo habían muchos errores que no se sabían solucionar. También se tuvo que aprender ha hacer una cámara, una inteligencia artificial y a manjar el módulo de Python pymage.</p></li>
+</ul>
+</li>
+<li>
+<p><strong>Procedimientos de instalación y prueba:</strong> </p>
+<ul>
+<li>
+<strong>Requisitos no funcionales:</strong>
+<ul>
+<li>Buen rendimiento</li>
+<li>Cero bugs</li>
+</ul>
+</li>
+<li><strong>Especificaciones de prueba y ejecución:</strong> </li>
+</ul>
+<p class=text-align-justify> Para este proyecto no se creará ejecutable por lo que el programa correrá directamente del editor de código VSC. EL interprete será el lenguaje de programación  <em><b>Python v3.10.7</b></em> </p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<h4>Arquitectura del sistema</h4>
+<ul>
+<li><h5> Descripción jerárquica </h5> <p class=text-align-justify> El programa se encuentra organizado por módulos de Python bajo el modelo <u><abbr title="Programación Orientada a Objetos">POO</abbr></u>. Por lo que agrupa una colección de objetos de la misma estructura para conformar una clase, siendo así cada objeto una instancia de su clase. </p></li>
+<li>
+<h5> Diagrama de módulos (UML) </h5>
+<ul>
+<li><b> Imagen del <abbr title="Lenguaje Unificado de Modelado">UML</abbr> </b></li>
+</ul>
+<p><a href="https://github.com/HamedPro3D/Quimbamba/blob/2908d8725c81ee489447c97c70311d9617feacd4/UML/UML__Quimbamba-Actualizado.png"><abbr title="Lenguaje Unificado de Modelado">UML</abbr>_Quimbamba</a></p>
+<p><img src="https://github.com/HamedPro3D/Quimbamba/blob/2908d8725c81ee489447c97c70311d9617feacd4/UML/UML__Quimbamba-Actualizado.png?raw=true" alt="UML__Quimbamba" /></p>
+<ul>
+<li><b> Codigo del <abbr title="Lenguaje Unificado de Modelado">UML</abbr> </b></li>
+</ul>
+<pre>
+	@startuml Quimbamba
+    Title Diagrama UML de Quimbamba
+    class Ajustes #lightgreen;line:darkgreen{
+    Largo:int
+    Ancho:int
+    FPS:int
+    TILESIZE:int
+    alturavida:int
+    anchovida:int
+    anchobarraenergia:int
+    tamañocorazon:int
+    ubicacion:str
+    tamañofuente:int
+    WORLD_MAP:str
+    }
+
+    class Armas #lightgreen;line:darkgreen{
+    jugador:int
+    image:str
+    grupos:float
+    }
+
+    class Debug #lightgreen;line:darkgreen{
+    font:str
+    debug(info,y:int,x:int)
+    }
+
+    class Enemigos #lightgreen;line:darkgreen{
+    nombremoustro:
+    pos:float
+    grupos:float
+    obstaculos:str
+    estado:int
+    image:str
+    rect:int
+    hitbox:int
+    nombremoustro:str
+    moustroinfo:str
+    vida:int
+    xp:int
+    velocidad:int
+    daño:int
+    resistencia:int
+    radioataque:int
+    deteccion:int
+    tipo:int
+    puedeatacar:Boolean
+    tiempoataque:int
+    esperaataque:int
+    importargraficos(name:str)
+    get_player_distance_direction(player)
+    tomarestado(jugador:int)
+    acciones(jugador:int)
+    animacion()
+    esperaataques()
+    update()
+    actualizacionenemigos(jugador:int)
+    }
+
+    class Entidad #lightgreen;line:darkgreen{
+    grupos:float
+    framesi:int
+    animacionv:float
+    direccion:int
+    move(velovidad:int)
+    colision(direccion:int)
+    }
+
+    class Estadisticas #lightgreen;line:darkgreen{
+    mostrars:str
+    font:(str,int)
+    tamañobarravida:int
+    tamañobarraenergia:int
+    mostrarbarra(actual:int, maximo:int, cuadrotrasero:int, color:str)
+    mostrarexperiencia(xp:int)
+    display(jugador:int)
+    }
+
+    class Magia #lightgreen;line:darkgreen{
+    jugador:int
+    grupos:float
+    image:str
+    }
+
+    class Jugador #lightgreen;line:darkgreen{
+    pos:float
+    grupos:float
+    obstaculos:str
+    image:str
+    rect:int
+    hitbox:int
+    estado:int
+    animaciondent:int
+    velocidadanimacion:float
+    direccion:int
+    velocidad:int
+    ataque: boolean
+    ataqueesp:int
+    sw:int
+    atacar:str
+    magia:str
+    estadisticas:int
+    vida:float
+    energia:float
+    xp:int
+    velocidad:int
+    animaciones()
+    input()
+    estados()
+    move(velocidad:int)
+    espera()
+    secuencia()
+    colicion(direccion:int )
+    update()
+    }
+
+    class Main #lightgreen;line:darkgreen{
+    pantalla:str
+    frames:float
+    run()
+    }
+
+    class Nivel #lightgreen;line:darkgreen{
+    mostrars:str
+    spritev:str
+    obstaculos: str
+    ataqueactual:int
+    spritesataque:str
+    spritesataqueenemigos:str
+    stats:int
+    crearmapa()
+    atacar()
+    magia()
+    logicaataquesp()
+    run()
+
+    }
+
+    class YCamaraGrupo #lightgreen;line:darkgreen{
+    mostrars:int
+    mitadancho:int
+    mitadlargo:int
+    offset:int
+    suelo_superficie: str
+    suelo_rect:int
+    custom_draw(jugador:int)
+    actualizacionenemigo(jugdor:int)
+    }
+
+    class Soporte #lightgreen;line:darkgreen{
+    import_csv_layout(path:str)
+    import_folder(path:str)
+    }
+
+    class Suelo #lightgreen;line:darkgreen{
+    pos:int
+    grupos:float
+    sprite_type:str
+    surface:str
+    image:int
+    }
+
+    Ajustes " 1 " <--* "    1 " Main
+    Nivel--* " 1 "Main
+    Debug " * "-- "       1   "Main
+    Jugador " * " --> " 1 " Ajustes
+    Jugador " * " *-- " * "Soporte
+    Magia" * "--* " * "Jugador
+    Armas" * "--* " * "Jugador
+    Enemigos " * "--> " 1 "Ajustes
+    Enemigos " * " *-- " * " Soporte
+    Enemigos " * " *-- " * " Entidad
+    Nivel " * "--> " 1 "Ajustes
+    Nivel " * "--* " * "Jugador
+    Nivel " * "-- " * "Debug
+    Nivel " * "-- " * " Estadisticas
+    Nivel " * "-- " * "Magia
+    Nivel " * "-- " * "Enemigos
+    Nivel " * "*-- " * "Suelo
+    Nivel " * " *-- " * " Soporte
+    Nivel " * " *-- YCamaraGrupo: compone
+    Suelo " * " *--> " 1 " Ajustes
+</code></pre>
+</li>
+<li>
+<h5> Descripción individual de los módulos </h5>
+<ul>
+<li>
+<b> Descripción general y propósito:</b>
+<ul>
+<li><p class=text-align-justify> <b> Módulo Ajustes: </b> Se encarga de administrar las variables fijas que necesita el programa.</p></li>
+<li><p class=text-align-justify> <b> Módulo Armas: </b> Se encarga de cargar las imágenes del arma según el estado del jugador.</p></li>
+<li><p class=text-align-justify> <b> Módulo Debug: </b> Se encarga de depurar el programa para saber si los comandos se están ejecutando correctamente, en este caso nos los muestra tanto en pantalla como en consola.</p></li>
+<li><p class=text-align-justify> <b> Módulo Enemigos: </b> Controla los enemigos que esta el el mapa. Tiene una pequeña IA que hace que el monstruo persiga al jugador según su ubicación cuando el jugador entra en un radio determinado.</p></li>
+<li><p class=text-align-justify> <b> Módulo Entidad: </b> Controla las colisiones de los enemigos.</p></li>
+<li><p class=text-align-justify> <b> Módulo  Estadisticas: </b> Crea y dibuja la barra de estadísticas (vida y experiencia) del personaje.</p></li>
+<li><p class=text-align-justify> <b> Módulo Jugador: </b> Se encarga de todo lo relacionado con el jugador, lo que es dibujarlo, procesar los estados, las animaciones, las transformaciones y su movimiento.</p></li>
+<li><p class=text-align-justify> <b> Módulo Magia:</b> Tiene una función similar al módulo arma solo que este es el encargado de cargar las imágenes del poder mágico según el estado del jugador</p></li>
+<li><p class=text-align-justify> <b> Módulo Main: </b> Es el encargado de correr el programa llamando a las otras clases.</p></li>
+<li><p class=text-align-justify> <b> Módulo Nivel: </b> Crea el mapa especifico del nivel con los aspectos gráficos visuales (las imágenes del los objetos y el suelo) y los no visuales (los box de colisiones). También Procesa los ataques del jugador para saber que debe borrar de pantalla. Tiene una clase llamada YCamaraGrupo la cual es la cámara que sigue al jugador</p></li>
+<li><p class=text-align-justify> <b> Módulo Soporte: </b> Se encarga de gestionar los CSV del mapa, objetos y colisiones.</p></li>
+<li><p class=text-align-justify> <b> Módulo suelo: </b> Se encarga de procesar la imagen del suelo.</p></li>
+</ul>
+</li>
+<li>
+<p><b> Responsabilidad y restricciones:</b> <p class=text-align-justify> </p></p>
+<ul>
+<li>
+<p class=text-align-justify> <b> Módulo Armas: </b> </p> 
+<ul>
+<li>módulo pygame</li>
+<li>módulo Jugador</li>
+</ul>
+</li>
+<li>
+<p class=text-align-justify> <b> Módulo Debug: </b> </p>
+<ul>
+<li>módulo pygame</li>
+</ul>
+</li>
+<li>
+<p class=text-align-justify> <b> Módulo Enemigos: </b></p>
+<ul>
+<li>módulo pygame</li>
+<li>módulo Ajustes</li>
+<li>módulo Entidad -&gt; clase Entidades</li>
+<li>módulo Soporte</li>
+</ul>
+</li>
+<li>
+<p class=text-align-justify> <b> Módulo Entidad: </b> </p>
+<ul>
+<li>módulo pygame</li>
+</ul>
+</li>
+<li>
+<p class=text-align-justify> <b> Módulo  Estadisticas: </b> </p>
+<ul>
+<li>módulo pygame</li>
+<li>módulo Ajustes</li>
+</ul>
+</li>
+<li>
+<p class=text-align-justify> <b> Módulo Jugador: </b> </p>
+<ul>
+<li>módulo pygame</li>
+<li>módulo Ajustes</li>
+<li>módulo Entidad -&gt; clase Entidades</li>
+</ul>
+</li>
+<li>
+<p class=text-align-justify> <b> Módulo Magia:</b> </p>
+<ul>
+<li>módulo pygame</li>
+<li>módulo Jugado</li>
+</ul>
+</li>
+<li>
+<p class=text-align-justify> <b> Módulo Main: </b> </p>
+<ul>
+<li>módulo pygame</li>
+<li>módulo sys</li>
+<li>módulo Nivel</li>
+</ul>
+</li>
+<li>
+<p class=text-align-justify> <b> Módulo Nivel: </b> </p>
+<ul>
+<li>módulo pygame</li>
+<li>módulo random</li>
+<li>módulo Ajustes</li>
+<li>módulo Soporte</li>
+<li>módulo suelo -&gt; clase piso</li>
+<li>módulo Jugador-&gt;clase Jugador</li>
+<li>módulo Debug-&gt;función debug</li>
+<li>módulo Armas-&gt;clase arma</li>
+<li>módulo Magia-&gt;clase Magia</li>
+<li>módulo Estadisticas-&gt;clase stats</li>
+<li>módulo Enemigos-&gt;clase enemigo</li>
+</ul>
+</li>
+<li>
+<p class=text-align-justify> <b> Módulo Soporte: </b> </p>
+<ul>
+<li>módulo csv-&gt;función reader</li>
+<li>módulo os-&gt;función walk</li>
+</ul>
+</li>
+<li>
+<p class=text-align-justify> <b> Módulo suelo: </b> </p>
+<ul>
+<li>módulo pygame</li>
+<li>módulo Ajuses</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4> Repositorio de GitHub </h4>
+<p><a href="https://github.com/HamedPro3D/Quimbamba">Quimbamba</a></p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
